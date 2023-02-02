@@ -57,4 +57,12 @@
 	{% endfor %}
   </tr>
 </table>
+
+<hr>
+<table border="1">
+  <caption>Total amount spent</caption>
+  <tr>
+    <td>{{total_amount_spent|floatformat:2}}</td>
+  </tr>
+</table>
 {% endblock %}
