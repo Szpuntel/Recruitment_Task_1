@@ -5,14 +5,15 @@
    - django >= 4
    - sqlite
    
-  # python manage.py migrate
-  # python manage.py loaddata fixtures.json
-
-2. Create git repository and add all files.
-3. Create new branch in format `firstName-lastName`.
+# python manage.py migrate
+# python manage.py loaddata fixtures.json
+# 2. Create git repository and add all files.
+# 3. Create new branch in format `firstName-lastName`.
 4. TASKS
 
-   1. In `expenses.ExpenseList` allow searching by date (from and/or to).
+# 1. In `expenses.ExpenseList` allow searching by date (from and/or to).
+
+
    2. In `expenses.ExpenseList` allow searching by multiple categories.
    3. In `expenses.ExpenseList` add sorting by category or date (ascending and descending)
    4. In `expenses.ExpenseList` add total amount spent.
