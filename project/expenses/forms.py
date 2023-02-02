@@ -1,7 +1,13 @@
 from django import forms
-from .models import Expense
+from .models import Expense, Category
 
 class ExpenseSearchForm(forms.ModelForm):
+
+    categories = forms.ModelMultipleChoiceField(
+        queryset=Category.objects.all(),
+        required=False,
+        widget=forms.CheckboxSelectMultiple
+    )
 
     start_date = forms.DateField(
         required = False,
@@ -15,10 +21,10 @@ class ExpenseSearchForm(forms.ModelForm):
 
     class Meta:
         model = Expense
-        fields = ('name','category')
+        fields = ('name',)
 
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['name'].required = False
-        self.fields['category'].required = False
+
