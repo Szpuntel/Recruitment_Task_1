@@ -59,6 +59,22 @@
 </table>
 
 <hr>
+
+<table border="1">
+	<caption>Total summary per year-month</caption>
+	<tr>
+	  <th>Year-Month</th>
+	  <th>Total</th>
+	</tr>
+	{% for item in summary_per_year_month %}
+	  <tr>
+		<td>{{ item.year_month|date:"Y-m" }}</td>
+		<td>{{ item.total|floatformat:2 }}</td>
+	  </tr>
+	{% endfor %}
+  </table>
+
+<hr>
 <table border="1">
   <caption>Total amount spent</caption>
   <tr>
