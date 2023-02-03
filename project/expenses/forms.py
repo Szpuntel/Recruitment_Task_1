@@ -9,6 +9,7 @@ class ExpenseSearchForm(forms.ModelForm):
         widget=forms.CheckboxSelectMultiple
     )
 
+
     start_date = forms.DateField(
         required = False,
         widget=forms.TextInput(
@@ -18,6 +19,7 @@ class ExpenseSearchForm(forms.ModelForm):
         required = False,
         widget=forms.TextInput(
             attrs={'type': 'date'}))
+    
 
     class Meta:
         model = Expense

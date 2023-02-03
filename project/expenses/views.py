@@ -8,7 +8,8 @@ from .reports import summary_per_category,total_amount_spent,summary_per_year_mo
 
 class ExpenseListView(ListView):
     model = Expense
-    paginate_by = 5
+    paginate_by = 20
+
 
     def get_context_data(self, *, object_list=None, **kwargs):
         queryset = object_list if object_list is not None else self.object_list
@@ -38,6 +39,8 @@ class ExpenseListView(ListView):
                 queryset = queryset.filter(date__lte=end_date)
             
 
+
+
         return super().get_context_data(
             form=form,
             object_list=queryset,
@@ -45,6 +48,11 @@ class ExpenseListView(ListView):
             total_amount_spent=total_amount_spent(queryset),
             summary_per_year_month=summary_per_year_month(queryset),
             **kwargs)
+    
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        order_by = self.request.GET.get('order_by', 'date')
+        return queryset.order_by(order_by)
 
 class CategoryListView(ListView):
     model = Category

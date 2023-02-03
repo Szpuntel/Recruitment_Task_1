@@ -24,6 +24,16 @@
 	</thead>
 	<tbody>
 
+		<form>
+			<select name="order_by">
+			  <option value="date">Sort by date (descending)</option>
+			  <option value="-date">Sort by date (ascending)</option>
+			</select>
+			<input type="submit" value="Sort">
+		  </form>
+
+		  <hr>
+
 	{% for obj in object_list %}
 	  <tr>
 		<td>{{ page_obj.start_index|add:forloop.counter0 }}.</td>
@@ -46,6 +56,7 @@
 
  {% include "_pagination.html" %}
 
+
 <hr>
 <table border="1">
   <caption>Summary per category</caption>
@@ -62,7 +73,7 @@
 <hr>
 
 <table border="1">
-	<caption>Total summary per year-month</caption>
+	<caption>Summary per year-month</caption>
 	<tr>
 	  <th>Year-Month</th>
 	  <th>Total</th>

@@ -8,6 +8,7 @@
 		<tr>
 			<th>name</th>
 			<th>actions</th>
+			<th>summary</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -20,10 +21,14 @@
 				<a href="{% url 'expenses:category-delete' obj.id %}">delete</a>
 				<a href="{% url 'expenses:category-update' obj.id %}">update</a>
 			</td>
+			<td>
+				{{ total }}
+			</td>
 		</tr>
 		{% endfor %}
 	</tbody>
-</table>
+</table> 
+
 
 
 <table border="1">
