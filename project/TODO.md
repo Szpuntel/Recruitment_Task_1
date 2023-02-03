@@ -14,10 +14,11 @@
 
 # 1. In `expenses.ExpenseList` allow searching by date (from and/or to).
 # 2. In `expenses.ExpenseList` allow searching by multiple categories.
-   3. In `expenses.ExpenseList` add sorting by category or date (ascending and descending)
 #  4. In `expenses.ExpenseList` add total amount spent.
 #  5. In `expenses.ExpenseList` add table with total summary per year-month.
-   6. Add update view for `expenses.Category`.
+#  6. Add update view for `expenses.Category`.
+
+   3. In `expenses.ExpenseList` add sorting by category or date (ascending and descending)
    7. Add number of expenses per category row in category list.
 
 5. By the end of seventh calendar day (even if it is incomplete), please:

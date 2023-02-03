@@ -49,3 +49,7 @@ class ExpenseListView(ListView):
 class CategoryListView(ListView):
     model = Category
     paginate_by = 5
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['summary_per_category'] = summary_per_category(Expense.objects.all())
+        return context

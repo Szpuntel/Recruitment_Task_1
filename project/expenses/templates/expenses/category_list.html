@@ -18,9 +18,21 @@
 			</td>
 			<td>
 				<a href="{% url 'expenses:category-delete' obj.id %}">delete</a>
+				<a href="{% url 'expenses:category-update' obj.id %}">update</a>
 			</td>
 		</tr>
 		{% endfor %}
 	</tbody>
 </table>
+
+
+<table border="1">
+	<caption>Summary per category</caption>
+	<tr>
+	  {% for category, total in summary_per_category.items %}
+		  <td>{{total|floatformat:2}}</td>
+	  </tr>
+	  {% endfor %}
+	</tr>
+  </table>
 {% endblock %}
