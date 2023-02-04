@@ -1,43 +1,43 @@
 {% extends "base.html" %}
-
 {% block content %}
 <a href="{% url 'expenses:category-create' %}">add</a>
+<hr>
+<div style="float: left;">
+	<table border="1">
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+			{% for obj in object_list %}
+			<tr>
+				<td>
+					{{obj.name}}
+				</td>
+				<td>
+					<a href="{% url 'expenses:category-delete' obj.id %}">delete</a>
+					<a href="{% url 'expenses:category-update' obj.id %}">update</a>
+				</td>
+			</tr>
+			{% endfor %}
+		
+	</table> 
+</div>
 
-<table border="1">
-	<thead>
-		<tr>
-			<th>name</th>
-			<th>actions</th>
-			<th>summary</th>
-		</tr>
-	</thead>
-	<tbody>
-		{% for obj in object_list %}
-		<tr>
-			<td>
-				{{obj.name}}
-			</td>
-			<td>
-				<a href="{% url 'expenses:category-delete' obj.id %}">delete</a>
-				<a href="{% url 'expenses:category-update' obj.id %}">update</a>
-			</td>
-			<td>
-				{{ total }}
-			</td>
-		</tr>
-		{% endfor %}
-	</tbody>
-</table> 
-
-
-
-<table border="1">
-	<caption>Summary per category</caption>
-	<tr>
-	  {% for category, total in summary_per_category.items %}
-		  <td>{{total|floatformat:2}}</td>
-	  </tr>
-	  {% endfor %}
-	</tr>
-  </table>
+	<div style="float: left;">
+		<table border="1">
+			<thead>
+				<tr>
+				<th>Summary per category</th>
+				</tr>
+			</thead>
+			<tr>
+			{% for category, total in summary_per_category.items %}
+				<td>{{total|floatformat:2}}</td>
+			</tr>
+			{% endfor %}
+			</tr>
+		</table>
+	</div>
 {% endblock %}

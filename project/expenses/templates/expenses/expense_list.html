@@ -9,7 +9,8 @@
   <button type="submit">search</button>
 </form>
 
-<br>
+  <hr>
+
 <table border="1">
 	<caption>Expenses</caption>
 	<thead>
@@ -23,16 +24,6 @@
 	  </tr>
 	</thead>
 	<tbody>
-
-		<form>
-			<select name="order_by">
-			  <option value="date">Sort by date (descending)</option>
-			  <option value="-date">Sort by date (ascending)</option>
-			</select>
-			<input type="submit" value="Sort">
-		  </form>
-
-		  <hr>
 
 	{% for obj in object_list %}
 	  <tr>
@@ -55,7 +46,14 @@
 </table>
 
  {% include "_pagination.html" %}
-
+ <hr>
+ <form>
+	 <select name="order_by">
+	   <option value="date">Sort by date (descending)</option>
+	   <option value="-date">Sort by date (ascending)</option>
+	 </select>
+	 <input type="submit" value="sort">
+   </form>
 
 <hr>
 <table border="1">
