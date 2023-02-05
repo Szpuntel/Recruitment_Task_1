@@ -8,7 +8,7 @@ from .reports import summary_per_category,total_amount_spent,summary_per_year_mo
 
 class ExpenseListView(ListView):
     model = Expense
-    paginate_by = 20
+    paginate_by = 12
 
 
     def get_context_data(self, *, object_list=None, **kwargs):

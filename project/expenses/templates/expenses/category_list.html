@@ -21,7 +21,6 @@
 				</td>
 			</tr>
 			{% endfor %}
-		
 	</table> 
 </div>
 
@@ -34,10 +33,9 @@
 			</thead>
 			<tr>
 			{% for category, total in summary_per_category.items %}
-				<td>{{total|floatformat:2}}</td>
+				<td>{{total|floatformat:2|default:0}}</td>
 			</tr>
 			{% endfor %}
-			</tr>
 		</table>
 	</div>
 {% endblock %}

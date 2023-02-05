@@ -20,7 +20,7 @@
 #  6. Add update view for `expenses.Category`.
 
 
-   7. Add number of expenses per category row in category list.
+#   7. Add number of expenses per category row in category list.
 
 5. By the end of seventh calendar day (even if it is incomplete), please:
    1. Commit all changes.
